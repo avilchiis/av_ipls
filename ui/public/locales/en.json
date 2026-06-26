@@ -1,0 +1,26 @@
+{
+  "account_name": "COSMO",
+  "header": "Boosting",
+  "subheader": "The Underground",
+  "home_tab": "Home",
+  "auctions_tab": "Auctions",
+  "settings_tab": "Settings",
+  "leaderboard_tab": "Leaderboard",
+  "expired": "Expired",
+  "transfer_button": "Send Contract",
+  "auction_button": "List on Auction",
+  "delete_button": "Drop Contract (2 click)",
+  "resend_button": "Resend Instructions",
+  "mission_steps": {
+    "steal": "Steal the target vehicle and deliver it to the specified location. Avoid causing damage to maintain its value.",
+    "trackers": "Use a hacking device to disable the target vehicle's tracking systems.",
+    "respray": "Take the target vehicle to a hidden spot and respray it to change its appearance using a paint can.",
+    "normal": "Drive the vehicle to the designated location while evading law enforcement. Ensure the vehicle remains in good condition.",
+    "vin": "Acquire the target vehicle and bring it to the provided location. Once secured, scratch the VIN and wipe its digital footprint to make it untraceable."
+  },
+  "admin": {
+    "live_tab": "Live View",
+    "vehicles_tab": "Vehicles",
+    "classes_tab": "Classes"
+  }
+}

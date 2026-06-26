@@ -1,0 +1,56 @@
+-- GTA V Base Game / North Yankton
+
+return {
+    id = "north_yankton",
+    label = "North Yankton",
+    category = "GTA V Base Game",
+    coords = { x = 3455.0, y = -700.0, z = 30.0 },
+    interior_id = nil,
+    ipls = {
+        load = {
+            "DES_ProTree_start",
+            "prologue01",
+            "prologue01c",
+            "prologue01d",
+            "prologue01e",
+            "prologue01f",
+            "prologue01g",
+            "prologue01h",
+            "prologue01i",
+            "prologue01j",
+            "prologue01k",
+            "prologue01z",
+            "prologue02",
+            "prologue03",
+            "prologue03_grv_cov",
+            "prologue03b",
+            "prologue04",
+            "prologue04b",
+            "prologue05",
+            "prologue05b",
+            "prologue06",
+            "prologue06_int",
+            "prologue06b",
+            "prologue_DistantLights",
+            "prologue_LODLights",
+            "prologue_m2_door",
+            "prologue_occl",
+            "prologuerd",
+            "prologuerdb",
+        },
+        remove = {
+        },
+    },
+    variants = {
+        Grave = {
+            _type = "select",
+            _nullable = false,
+            options = {
+                covered = "prologue03_grv_cov",
+                dug = "prologue03_grv_dug",
+                funeral = "prologue03_grv_fun",
+            },
+        },
+    },
+    defaults = {},
+}

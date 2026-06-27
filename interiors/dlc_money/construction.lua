@@ -1,11 +1,11 @@
 -- The Criminal Enterprises / Construction
-
+-- 678.040, 769.674, 205.0
 return {
     id = "construction",
     label = "Construction",
     category = "The Criminal Enterprises",
     min_build = 3570,
-    coords = { x = 8.0, y = 494.0945, z = 128.0 },
+    coords = { x = 678.040, y = 769.674, z = 205.0 },
     interior_id = nil,
     ipls = {
         load = {

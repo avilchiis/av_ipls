@@ -15,17 +15,34 @@ return {
         },
     },
     variants = {
-        Details = {
-            _type = "stages",
+        Products = {
+            _type = "toggle",
             _nullable = false,
             options = {
-                products = { "set_product_01", "set_product_02", "set_product_03", "set_product_04", "set_product_05" },
-                supplies = { "set_supplies_01", "set_supplies_02", "set_supplies_03", "set_supplies_04", "set_supplies_05" },
-                equipment = "set_equipment_upgrade",
+                on = { "set_product_01", "set_product_02", "set_product_03", "set_product_04", "set_product_05" },
+                off = "",
             },
         },
-},
+        Supplies = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on = { "set_supplies_01", "set_supplies_02", "set_supplies_03", "set_supplies_04", "set_supplies_05" },
+                off = "",
+            },
+        },
+        Equipment = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on = "set_equipment_upgrade",
+                off = "",
+            },
+        },
+    },
     defaults = {
-        Details = "products",
-},
+        Products = "on",
+        Supplies = "on",
+        Equipment = "on",
+    },
 }

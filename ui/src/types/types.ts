@@ -39,7 +39,7 @@ export interface ModalType {
   callback?: (data: any) => void;
 }
 
-export type VariantType = "select" | "select_nullable" | "toggle" | "stages" | "color";
+export type VariantType = "select" | "select_nullable" | "toggle" | "stages" | "color" | "ipl_select";
 
 export interface VariantDef {
   _type: VariantType;
@@ -75,4 +75,5 @@ export interface AdminData {
   registry: Registry;
   state: ServerState;
   gameBuild?: number;
+  currentInteriorId?: string;
 }

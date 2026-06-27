@@ -1,13 +1,12 @@
 -- Finance & Felony / Office4
--- Location: Office 4  (-1392.667, -480.4736, 72.0422)
 
 return {
     id = "office4",
     label = "Office4",
     category = "Finance & Felony",
-    coords = { x = -1392.667, y = -480.4736, z = 72.0422 },
+    coords = { x = -1388.0, y = -480.0, z = 72.0 },
     interior_id = {
-        Style = 243201,
+        warm = 243201,
         classical = 243457,
         vintage = 243713,
         contrast = 243969,
@@ -18,26 +17,31 @@ return {
         polished = 245249,
     },
     ipls = {
-        load = {
-            "ex_sm_15_office_01a",
-            "ex_sm_15_office_01b",
-            "ex_sm_15_office_01c",
-            "ex_sm_15_office_02a",
-            "ex_sm_15_office_02b",
-            "ex_sm_15_office_02c",
-            "ex_sm_15_office_03a",
-            "ex_sm_15_office_03b",
-            "ex_sm_15_office_03c",
-        },
-        remove = {
-        },
+        load = {},   -- IPLs are managed by the Style (ipl_select) variant
+        remove = {},
     },
     variants = {
+        -- Each style loads its own IPL + uses its own interior_id
+        Style = {
+            _type = "ipl_select",
+            _nullable = false,
+            options = {
+                warm = "ex_sm_15_office_01a",
+                classical = "ex_sm_15_office_01b",
+                vintage = "ex_sm_15_office_01c",
+                contrast = "ex_sm_15_office_02a",
+                rich = "ex_sm_15_office_02b",
+                cool = "ex_sm_15_office_02c",
+                ice = "ex_sm_15_office_03a",
+                conservative = "ex_sm_15_office_03b",
+                polished = "ex_sm_15_office_03c",
+            },
+        },
         Chairs = {
             _type = "toggle",
             _nullable = false,
             options = {
-                on = "office_chairs",
+                on  = "office_chairs",
                 off = "",
             },
         },
@@ -45,13 +49,23 @@ return {
             _type = "toggle",
             _nullable = false,
             options = {
-                on = "office_booze",
+                on  = "office_booze",
                 off = "",
             },
         },
-},
+        BoozeCigs = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on  = "office_booze_cigs",
+                off = "",
+            },
+        },
+    },
     defaults = {
-        Chairs = "on",
-        Booze = "on",
-},
+        Style   = "warm",
+        Chairs  = "on",
+        Booze   = "on",
+        BoozeCigs = "off",
+    },
 }

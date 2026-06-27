@@ -1,11 +1,12 @@
 -- Import/Export / Garage2
-
+-- -84.2193, -823.0851, 221.00
 return {
     id = "garage2",
     label = "Garage2",
     category = "Import/Export",
-    coords = { x = -75.8466, y = -826.9893, z = 243.0 },
+    coords = { x = -84.2193, y = -823.0851, z = 221.0 },
     interior_id = {
+        Garage1 = 254465,
         Garage2 = 254721,
         Garage3 = 254977,
         ModShop = 255233,

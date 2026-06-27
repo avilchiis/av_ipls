@@ -15,6 +15,14 @@ return {
         remove = {
         },
     },
-    variants = {},
-    defaults = {},
+    variants = {
+    Tint = {
+        _type = "toggle",
+        _nullable = false,
+        options = { on = "set_carwash_tints", off = "" },
+    },
+},
+    defaults = {
+    Tint = "on",
+},
 }

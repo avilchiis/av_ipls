@@ -1,10 +1,10 @@
 -- GTA V Base Game / Simeon
-
+-- -66.9351, -1106.2301, 26.0168, 306.6670
 return {
     id = "simeon",
     label = "Simeon",
     category = "GTA V Base Game",
-    coords = { x = 496.63, y = -1341.69, z = 29.33 },
+    coords = { x = -66.9351, y = -1106.2301, z = 26.0168 },
     interior_id = 7170,
     ipls = {
         load = {

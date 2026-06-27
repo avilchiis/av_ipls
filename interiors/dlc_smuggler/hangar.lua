@@ -1,5 +1,3 @@
--- Smuggler's Run / Hangar
-
 return {
     id = "hangar",
     label = "Hangar",
@@ -10,8 +8,7 @@ return {
         load = {
             "sm_smugdlc_interior_placement_interior_0_smugdlc_int_01_milo_",
         },
-        remove = {
-        },
+        remove = {},
     },
     variants = {
         Floor = {
@@ -71,14 +68,6 @@ return {
                 closed = "set_bedroom_blinds_closed",
             },
         },
-        Blinds = {
-            _type = "toggle",
-            _nullable = false,
-            options = {
-                opened = "set_bedroom_blinds_open",
-                closed = "set_bedroom_blinds_closed",
-            },
-        },
         Lighting = {
             _type = "select",
             _nullable = false,
@@ -120,14 +109,10 @@ return {
                 yellow = "set_lighting_wall_tint09",
             },
         },
-    
         Cranes = {
             _type = "toggle",
             _nullable = false,
-            options = {
-                on = "set_crane_tint",
-                off = "",
-            },
+            options = { on = "set_crane_tint", off = "" },
         },
         CranesColor = {
             _type = "color",
@@ -140,15 +125,15 @@ return {
                 colorSet4 = 4,
                 colorSet5 = 5,
                 colorSet6 = 6,
+                colorSet7 = 7,
+                colorSet8 = 8,
+                colorSet9 = 9,
             },
         },
         ModArea = {
             _type = "toggle",
             _nullable = false,
-            options = {
-                on = "set_modarea",
-                off = "",
-            },
+            options = { on = "set_modarea", off = "" },
         },
         ModAreaColor = {
             _type = "color",
@@ -161,6 +146,9 @@ return {
                 colorSet4 = 4,
                 colorSet5 = 5,
                 colorSet6 = 6,
+                colorSet7 = 7,
+                colorSet8 = 8,
+                colorSet9 = 9,
             },
         },
         BedroomStyle = {
@@ -171,6 +159,11 @@ return {
                 modern = { "set_bedroom_modern", "set_bedroom_tint" },
                 traditional = { "set_bedroom_traditional", "set_bedroom_tint" },
             },
+        },
+        BedroomClutter = {
+            _type = "toggle",
+            _nullable = false,
+            options = { on = "set_bedroom_clutter", off = "" },
         },
         WallsColor = {
             _type = "color",
@@ -183,19 +176,65 @@ return {
                 colorSet4 = 4,
                 colorSet5 = 5,
                 colorSet6 = 6,
+                colorSet7 = 7,
+                colorSet8 = 8,
+                colorSet9 = 9,
             },
         },
-},
+        FakeLights = {
+            _type = "color",
+            _nullable = false,
+            entity_set = "set_lighting_tint_props",
+            options = {
+                white = 0,
+                blue = 1,
+                yellow = 2,
+            },
+        },
+        DecalsColor = {
+            _type = "color",
+            _nullable = false,
+            _target = "Decals",
+            options = {
+                colorSet1 = 1,
+                colorSet2 = 2,
+                colorSet3 = 3,
+                colorSet4 = 4,
+                colorSet5 = 5,
+                colorSet6 = 6,
+                colorSet7 = 7,
+                colorSet8 = 8,
+                colorSet9 = 9,
+            },
+        },
+        BedroomStyleColor = {
+            _type = "color",
+            _nullable = false,
+            entity_set = "set_bedroom_tint",
+            options = {
+                colorSet1 = 1,
+                colorSet2 = 2,
+                colorSet3 = 3,
+                colorSet4 = 4,
+                colorSet5 = 5,
+                colorSet6 = 6,
+                colorSet7 = 7,
+                colorSet8 = 8,
+                colorSet9 = 9,
+            },
+        },
+    },
     defaults = {
         Style = "plain",
         Decals = "decal1",
         Office = "basic",
-        Blinds = "opened",
+        Bedroom = "opened",
         Ceiling = "yellow",
         Walls = "neutral",
-    
         CranesColor = "colorSet1",
         ModAreaColor = "colorSet1",
         WallsColor = "colorSet1",
-},
+        DecalsColor = "colorSet1",
+        BedroomStyleColor = "colorSet1",
+    },
 }

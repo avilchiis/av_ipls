@@ -1,6 +1,6 @@
 isReady = false
 currentInteriorId = 0
--- Interior ID observer — keeps currentInteriorId updated each tick
+
 CreateThread(function()
     while true do
         currentInteriorId = GetInteriorFromEntity(PlayerPedId())
@@ -8,7 +8,6 @@ CreateThread(function()
     end
 end)
 
--- Per-frame cull model loop for interiors that define cull_models
 CreateThread(function()
     while not NetworkIsPlayerActive(PlayerId()) do Wait(1) end
     TriggerServerEvent('av_ipls:requestSync')
@@ -38,7 +37,6 @@ CreateThread(function()
     end
 end)
 
--- Server events
 RegisterNetEvent('av_ipls:syncState', function(state)
     serverState = state or {}
     isReady = true
@@ -47,15 +45,15 @@ RegisterNetEvent('av_ipls:syncState', function(state)
 end)
 
 RegisterNetEvent('av_ipls:syncInterior', function(intId, state)
-    print(('[av_ipls] syncInterior: %s active=%s'):format(tostring(intId), tostring(state and state.active)))
+    dbug(('syncInterior: %s active=%s'):format(tostring(intId), tostring(state and state.active)))
     serverState[intId] = state or nil
-    -- Push to NUI so admin menu stays live without re-opening
+
     SendNUIMessage({ action = 'syncInterior', data = { id = intId, state = state } })
     if not isReady then
-        print('[av_ipls] syncInterior: not ready, skipping ' .. tostring(intId))
+        dbug('syncInterior: not ready, skipping ' .. tostring(intId))
         return
     end
-    applyState(intId, getMerged(intId))
+    applyState(intId)
 end)
 
 RegisterNetEvent('av_ipls:doRefreshInterior', function(intId)

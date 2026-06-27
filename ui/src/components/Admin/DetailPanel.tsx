@@ -101,7 +101,10 @@ export function DetailPanel({
   const buildOk = !def.min_build || gameBuild >= def.min_build;
   const luaCode = generateLua(def, draft);
 
-  const setActive = (v: boolean) => { isDirtyRef.current = true; setDraft((d) => ({ ...d, active: v })); };
+  const setActive = (v: boolean) => {
+    isDirtyRef.current = true;
+    setDraft((d) => ({ ...d, active: v }));
+  };
   const setVariant = (group: string, option: string) => {
     isDirtyRef.current = true;
     setDraft((d) => ({ ...d, variants: { ...d.variants, [group]: option } }));
@@ -114,7 +117,7 @@ export function DetailPanel({
     isDirtyRef.current = false;
     setSaving(true);
     onSave(def.id, draft);
-    setTimeout(() => setSaving(false), 2000);
+    setTimeout(() => setSaving(false), 500);
   };
   const handleTeleport = () => {
     if (def.coords) apiTeleport(def.coords);
@@ -166,7 +169,6 @@ export function DetailPanel({
           {luaCode}
         </Code>
       </Modal>
-
       <Box className={classes.detailPanel}>
         <Box className={classes.detailHeader}>
           <Flex align="center" gap={8}>
@@ -186,7 +188,6 @@ export function DetailPanel({
             </Text>
           )}
         </Box>
-
         <ScrollArea className={classes.detailScroll} scrollbarSize={4}>
           <Flex
             className={classes.variantRow}
@@ -205,7 +206,6 @@ export function DetailPanel({
               onChange={(e) => setActive(e.currentTarget.checked)}
             />
           </Flex>
-
           {variantKeys.length === 0 ? (
             <Text c="dimmed" size="xs" mt={10}>
               No configurable options
@@ -223,7 +223,6 @@ export function DetailPanel({
             ))
           )}
         </ScrollArea>
-
         <Flex
           className={classes.detailFooter}
           gap={8}

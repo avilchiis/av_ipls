@@ -20,6 +20,14 @@ return {
         },
     },
     variants = {
+    Style = {
+        _type = "select",
+        _nullable = false,
+        options = {
+            basic = "set_mechanic_basic",
+            upgrade = "set_mechanic_upgrade",
+        },
+    },
         Lift1 = {
             _type = "select",
             _nullable = false,
@@ -55,6 +63,7 @@ return {
         },
 },
     defaults = {
+        Style = "upgrade",
         Lift1 = "up",
         Lift2 = "up",
     

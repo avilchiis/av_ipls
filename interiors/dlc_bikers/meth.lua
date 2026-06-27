@@ -1,6 +1,3 @@
--- Bikers / Meth
--- Location: Meth lab  (1009.5, -3196.6, -38.9968)
-
 return {
     id = "meth",
     label = "Meth",
@@ -8,11 +5,8 @@ return {
     coords = { x = 1009.5, y = -3196.6, z = -38.9968 },
     interior_id = 247041,
     ipls = {
-        load = {
-            "bkr_biker_interior_placement_interior_2_biker_dlc_int_ware01_milo",
-        },
-        remove = {
-        },
+        load = { "bkr_biker_interior_placement_interior_2_biker_dlc_int_ware01_milo" },
+        remove = {},
     },
     variants = {
         Style = {
@@ -28,22 +22,13 @@ return {
         Security = {
             _type = "select_nullable",
             _nullable = true,
-            options = {
-                none = "",
-                upgrade = "meth_lab_security_high",
-            },
+            options = { none = "", upgrade = "meth_lab_security_high" },
         },
-        Details = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                production = "meth_lab_production",
-            },
-        },
-},
+        Production = { _type = "toggle", options = { on = "meth_lab_production", off = "" } },
+    },
     defaults = {
         Style = "empty",
         Security = "upgrade",
-        Details = "production",
-},
+        Production = "on",
+    },
 }

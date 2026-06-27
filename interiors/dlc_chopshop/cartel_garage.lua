@@ -14,6 +14,14 @@ return {
         remove = {
         },
     },
-    variants = {},
-    defaults = {},
+    variants = {
+    Entities = {
+        _type = "toggle",
+        _nullable = false,
+        options = { on = "mp2023_02_dlc_int_6_cb", off = "" },
+    },
+},
+    defaults = {
+    Entities = "on",
+},
 }

@@ -494,3 +494,9 @@ export const apiGhostMode = async (): Promise<void> => {
   if (isEnvBrowser()) return;
   await fetchNui("av_ipls", "ghostMode", {});
 };
+
+export const apiLocate = async (): Promise<{ interiorId: string | null }> => {
+  if (isEnvBrowser()) return { interiorId: null };
+  const res = await fetchNui<{ interiorId: string | null }>("av_ipls", "locateInterior", {});
+  return res ?? { interiorId: null };
+};

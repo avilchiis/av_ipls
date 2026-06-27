@@ -1,6 +1,3 @@
--- The Diamond Casino / Arcade
--- Location: Arcade  (2732.0, -380.0, -50.0)
-
 return {
     id = "arcade",
     label = "Arcade",
@@ -8,13 +5,16 @@ return {
     min_build = 2060,
     coords = { x = 2732.0, y = -380.0, z = -50.0 },
     interior_id = 278273,
-    ipls = {
-        load = {
-        },
-        remove = {
-        },
-    },
+    ipls = { load = {}, remove = {} },
     variants = {
+        Style = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                derelict = { "entity_set_arcade_set_derelict", "entity_set_arcade_set_derelict_carpet", "entity_set_arcade_set_derelict_clean_up" },
+                normal = "entity_set_constant_geometry",
+            },
+        },
         Ceiling = {
             _type = "select",
             _nullable = false,
@@ -85,29 +85,13 @@ return {
                 master = "entity_set_plushie_09",
             },
         },
-        Details = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                tv = "entity_set_big_screen",
-                screens = "entity_set_screens",
-            },
-        },
-    
-        Style = {
-            _type = "stages",
-            _nullable = false,
-            options = {
-                derelict = { "entity_set_arcade_set_derelict", "entity_set_arcade_set_derelict_carpet", "entity_set_arcade_set_derelict_clean_up" },
-                normal = "entity_set_constant_geometry",
-            },
-        },
-},
+        BigScreen = { _type = "toggle", options = { on = "entity_set_big_screen", off = "" } },
+        Screens = { _type = "toggle", options = { on = "entity_set_screens", off = "" } },
+    },
     defaults = {
+        Style = "normal",
         Ceiling = "flat",
         Mural = "forever",
         Floor = "proper",
-    
-        Style = "normal",
-},
+    },
 }

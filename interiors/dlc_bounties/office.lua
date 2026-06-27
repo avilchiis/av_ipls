@@ -1,10 +1,10 @@
--- The Chop Shop / Office
+-- Bottom Dollar Bounties / Office
 -- Location: Bail office  (565.886, -2688.761, -50.0)
 
 return {
     id = "bounties_office",
     label = "Office",
-    category = "The Chop Shop",
+    category = "Bottom Dollar Bounties",
     min_build = 3258,
     coords = { x = 565.886, y = -2688.761, z = -50.0 },
     interior_id = 295425,

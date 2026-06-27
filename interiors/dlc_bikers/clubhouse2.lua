@@ -125,6 +125,61 @@ return {
                 off = "no_mod_booth",
             },
         },
+        -- ── Stashes ───────────────────────────────────────────────────────────
+        MethStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "meth_small",
+                B = { "meth_small", "meth_medium" },
+                C = { "meth_small", "meth_medium", "meth_large" },
+            },
+        },
+        CashStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "cash_small",
+                B = { "cash_small", "cash_medium" },
+                C = { "cash_small", "cash_medium", "cash_large" },
+            },
+        },
+        WeedStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "weed_small",
+                B = { "weed_small", "weed_medium" },
+                C = { "weed_small", "weed_medium", "weed_large" },
+            },
+        },
+        CokeStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "coke_small",
+                B = { "coke_small", "coke_medium" },
+                C = { "coke_small", "coke_medium", "coke_large" },
+            },
+        },
+        CounterfeitStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "counterfeit_small",
+                B = { "counterfeit_small", "counterfeit_medium" },
+                C = { "counterfeit_small", "counterfeit_medium", "counterfeit_large" },
+            },
+        },
+        DocumentStash = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                A = "id_small",
+                B = { "id_small", "id_medium" },
+                C = { "id_small", "id_medium", "id_large" },
+            },
+        },
     },
     defaults = {
         Walls          = "brick",

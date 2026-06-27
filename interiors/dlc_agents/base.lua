@@ -1,9 +1,9 @@
--- The Contract / Base
+-- Agents of Sabotage / Base
 
 return {
     id = "agents_base",
     label = "Base",
-    category = "The Contract",
+    category = "Agents of Sabotage",
     min_build = 3407,
     coords = nil,
     interior_id = nil,

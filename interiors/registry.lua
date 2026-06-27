@@ -2,8 +2,22 @@
 
 local Registry = {}
 
+-- Arena War
+Registry["arena"] = require "interiors.dlc_arenawar.arena"
+Registry["arena_vip"] = require "interiors.dlc_arenawar.arena_vip"
+
 -- After Hours
 Registry["nightclubs"] = require "interiors.dlc_afterhours.nightclubs"
+Registry["nightclub_mesa"] = require "interiors.dlc_afterhours.nightclub_mesa"
+Registry["nightclub_missionrow"] = require "interiors.dlc_afterhours.nightclub_missionrow"
+Registry["nightclub_strawberry"] = require "interiors.dlc_afterhours.nightclub_strawberry"
+Registry["nightclub_vinewoodwest"] = require "interiors.dlc_afterhours.nightclub_vinewoodwest"
+Registry["nightclub_cypress"] = require "interiors.dlc_afterhours.nightclub_cypress"
+Registry["nightclub_delperro"] = require "interiors.dlc_afterhours.nightclub_delperro"
+Registry["nightclub_airport"] = require "interiors.dlc_afterhours.nightclub_airport"
+Registry["nightclub_elysian"] = require "interiors.dlc_afterhours.nightclub_elysian"
+Registry["nightclub_vinewood"] = require "interiors.dlc_afterhours.nightclub_vinewood"
+Registry["nightclub_vespucci"] = require "interiors.dlc_afterhours.nightclub_vespucci"
 
 -- Bikers
 Registry["clubhouse1"] = require "interiors.dlc_bikers.clubhouse1"
@@ -92,6 +106,7 @@ Registry["traincrash"] = require "interiors.dlc_drugwars.traincrash"
 -- Los Santos Tuners
 Registry["tuner_garage"] = require "interiors.dlc_tuner.garage"
 Registry["meetup"] = require "interiors.dlc_tuner.meetup"
+Registry["tuner_methlab"] = require "interiors.dlc_tuner.methlab"
 
 -- Mercenaries
 Registry["club"] = require "interiors.dlc_mercenaries.club"

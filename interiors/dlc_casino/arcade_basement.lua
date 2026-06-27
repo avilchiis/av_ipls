@@ -1,6 +1,3 @@
--- The Diamond Casino / Arcade Basement
--- Location: Arcade basement  (2710.0, -360.78, -56.0)
-
 return {
     id = "arcade_basement",
     label = "Arcade Basement",
@@ -8,30 +5,8 @@ return {
     min_build = 2060,
     coords = { x = 2710.0, y = -360.78, z = -56.0 },
     interior_id = 278529,
-    ipls = {
-        load = {
-        },
-        remove = {
-        },
-    },
+    ipls = { load = {}, remove = {} },
     variants = {
-        Garage = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                garage = "set_plan_garage",
-                wall = "set_plan_wall",
-            },
-        },
-        Bed = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                bed = "set_plan_bed",
-                trash = "set_plan_no_bed",
-            },
-        },
-    
         Style = {
             _type = "stages",
             _nullable = false,
@@ -40,42 +15,45 @@ return {
                 normal = { "set_plan_setup", "set_plan_scribbles" },
             },
         },
-        Details = {
+        Garage = {
             _type = "select",
             _nullable = false,
-            options = {
-                computer = "set_plan_computer",
-                cabinets = "set_plan_arcade_x4",
-                plans = "set_plan_plans",
-                casino = "set_plan_casino",
-                keypad = "set_plan_keypad",
-                vault = "set_plan_vault",
-                mechanic = "set_plan_mechanic",
-                hacker = "set_plan_hacker",
-                weapons = "set_plan_weapons",
-                vaultLaser = "set_plan_vault_laser",
-                vaultDrill = "set_plan_vault_drill",
-                drill = "set_plan_electric_drill",
-                explosives = "set_plan_plastic_explosives",
-                dongle = "set_plan_hacking_device",
-                cockroaches = "set_plan_cockroaches",
-                stealthOutfits = "set_plan_stealth_outfits",
-                securityOutfits = "set_plan_gruppe_sechs_outfits",
-                helmet = "set_plan_fireman_helmet",
-                drone = "set_plan_drone_parts",
-                keycards = "set_plan_vault_keycard_01a",
-                keycard1 = "set_plan_swipe_card_01a",
-                keycard2 = "set_plan_swipe_card_01b",
-                vaultLaser2 = "set_plan_vault_laser_alt",
-                vaultDrill2 = "set_plan_vault_drill_alt",
-            },
+            options = { garage = "set_plan_garage", wall = "set_plan_wall" },
         },
-},
+        Bed = {
+            _type = "select",
+            _nullable = false,
+            options = { bed = "set_plan_bed", trash = "set_plan_no_bed" },
+        },
+        Computer = { _type = "toggle", options = { on = "set_plan_computer", off = "" } },
+        Cabinets = { _type = "toggle", options = { on = "set_plan_arcade_x4", off = "" } },
+        Plans = { _type = "toggle", options = { on = "set_plan_plans", off = "" } },
+        Casino = { _type = "toggle", options = { on = "set_plan_casino", off = "" } },
+        Keypad = { _type = "toggle", options = { on = "set_plan_keypad", off = "" } },
+        Vault = { _type = "toggle", options = { on = "set_plan_vault", off = "" } },
+        Mechanic = { _type = "toggle", options = { on = "set_plan_mechanic", off = "" } },
+        Hacker = { _type = "toggle", options = { on = "set_plan_hacker", off = "" } },
+        Weapons = { _type = "toggle", options = { on = "set_plan_weapons", off = "" } },
+        VaultLaser = { _type = "toggle", options = { on = "set_plan_vault_laser", off = "" } },
+        VaultDrill = { _type = "toggle", options = { on = "set_plan_vault_drill", off = "" } },
+        Drill = { _type = "toggle", options = { on = "set_plan_electric_drill", off = "" } },
+        Explosives = { _type = "toggle", options = { on = "set_plan_plastic_explosives", off = "" } },
+        Dongle = { _type = "toggle", options = { on = "set_plan_hacking_device", off = "" } },
+        Cockroaches = { _type = "toggle", options = { on = "set_plan_cockroaches", off = "" } },
+        StealthOutfits = { _type = "toggle", options = { on = "set_plan_stealth_outfits", off = "" } },
+        SecurityOutfits = { _type = "toggle", options = { on = "set_plan_gruppe_sechs_outfits", off = "" } },
+        Helmet = { _type = "toggle", options = { on = "set_plan_fireman_helmet", off = "" } },
+        Drone = { _type = "toggle", options = { on = "set_plan_drone_parts", off = "" } },
+        Keycards = { _type = "toggle", options = { on = "set_plan_vault_keycard_01a", off = "" } },
+        Keycard1 = { _type = "toggle", options = { on = "set_plan_swipe_card_01a", off = "" } },
+        Keycard2 = { _type = "toggle", options = { on = "set_plan_swipe_card_01b", off = "" } },
+        VaultLaser2 = { _type = "toggle", options = { on = "set_plan_vault_laser_alt", off = "" } },
+        VaultDrill2 = { _type = "toggle", options = { on = "set_plan_vault_drill_alt", off = "" } },
+    },
     defaults = {
+        Style = "normal",
         Garage = "garage",
         Bed = "bed",
-    
-        Style = "normal",
-        Details = "computer",
-},
+        Computer = "on",
+    },
 }

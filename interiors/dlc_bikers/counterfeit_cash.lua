@@ -1,6 +1,3 @@
--- Bikers / Counterfeit Cash
--- Location: Counterfeit cash factory  (1121.897, -3195.338, -40.4025)
-
 return {
     id = "counterfeit_cash",
     label = "Counterfeit Cash",
@@ -8,11 +5,8 @@ return {
     coords = { x = 1121.897, y = -3195.338, z = -40.4025 },
     interior_id = 247809,
     ipls = {
-        load = {
-            "bkr_biker_interior_placement_interior_5_biker_dlc_int_ware04_milo",
-        },
-        remove = {
-        },
+        load = { "bkr_biker_interior_placement_interior_5_biker_dlc_int_ware04_milo" },
+        remove = {},
     },
     variants = {
         Printer = {
@@ -33,49 +27,41 @@ return {
                 upgrade = "counterfeit_security",
             },
         },
-        Dryer1 = {
-            _type = "select",
-            _nullable = false,
+        Dryer1 = { _type = "select", _nullable = false, options = { on = "dryera_on", off = "dryera_off", open = "dryera_open" } },
+        Dryer2 = { _type = "select", _nullable = false, options = { on = "dryerb_on", off = "dryerb_off", open = "dryerb_open" } },
+        Dryer3 = { _type = "select", _nullable = false, options = { on = "dryerc_on", off = "dryerc_off", open = "dryerc_open" } },
+        Dryer4 = { _type = "select", _nullable = false, options = { on = "dryerd_on", off = "dryerd_off", open = "dryerd_open" } },
+        Chairs = { _type = "toggle", options = { on = "special_chairs", off = "" } },
+        Cutter = { _type = "toggle", options = { on = "money_cutter", off = "" } },
+        Furnitures = { _type = "toggle", options = { on = "counterfeit_setup", off = "" } },
+        Cash10 = {
+            _type = "stages",
+            _nullable = true,
             options = {
-                on = "dryera_on",
-                off = "dryera_off",
-                open = "dryera_open",
+                A = "counterfeit_cashpile10a",
+                B = { "counterfeit_cashpile10a", "counterfeit_cashpile10b" },
+                C = { "counterfeit_cashpile10a", "counterfeit_cashpile10b", "counterfeit_cashpile10c" },
+                D = { "counterfeit_cashpile10a", "counterfeit_cashpile10b", "counterfeit_cashpile10c", "counterfeit_cashpile10d" },
             },
         },
-        Dryer2 = {
-            _type = "select",
-            _nullable = false,
+        Cash20 = {
+            _type = "stages",
+            _nullable = true,
             options = {
-                on = "dryerb_on",
-                off = "dryerb_off",
-                open = "dryerb_open",
+                A = "counterfeit_cashpile20a",
+                B = { "counterfeit_cashpile20a", "counterfeit_cashpile20b" },
+                C = { "counterfeit_cashpile20a", "counterfeit_cashpile20b", "counterfeit_cashpile20c" },
+                D = { "counterfeit_cashpile20a", "counterfeit_cashpile20b", "counterfeit_cashpile20c", "counterfeit_cashpile20d" },
             },
         },
-        Dryer3 = {
-            _type = "select",
-            _nullable = false,
+        Cash100 = {
+            _type = "stages",
+            _nullable = true,
             options = {
-                on = "dryerc_on",
-                off = "dryerc_off",
-                open = "dryerc_open",
-            },
-        },
-        Dryer4 = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                on = "dryerd_on",
-                off = "dryerd_off",
-                open = "dryerd_open",
-            },
-        },
-        Details = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                chairs = "special_chairs",
-                cutter = "money_cutter",
-                furnitures = "counterfeit_setup",
+                A = "counterfeit_cashpile100a",
+                B = { "counterfeit_cashpile100a", "counterfeit_cashpile100b" },
+                C = { "counterfeit_cashpile100a", "counterfeit_cashpile100b", "counterfeit_cashpile100c" },
+                D = { "counterfeit_cashpile100a", "counterfeit_cashpile100b", "counterfeit_cashpile100c", "counterfeit_cashpile100d" },
             },
         },
     },
@@ -86,5 +72,6 @@ return {
         Dryer2 = "on",
         Dryer3 = "on",
         Dryer4 = "on",
+        Cash100 = "D",
     },
 }

@@ -1,10 +1,10 @@
--- The Chop Shop / Carrier
+-- Bottom Dollar Bounties / Carrier
 -- Location: Aircraft carrier  (-3208.03, 3954.54, 14.0)
 
 return {
     id = "bounties_carrier",
     label = "Carrier",
-    category = "The Chop Shop",
+    category = "Bottom Dollar Bounties",
     min_build = 3258,
     coords = { x = -3208.03, y = 3954.54, z = 14.0 },
     interior_id = nil,

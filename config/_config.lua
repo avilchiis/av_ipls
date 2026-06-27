@@ -1,12 +1,12 @@
 Config = {}
-Config.Debug = false -- Set to true to enable debug messages in the console
-Config.AdminCommand = "admin:ipl" -- Command that admins can use to open the IPL management menu
-Config.AdminGroups = {"group.admin", "group.god", "group.superadmin"} -- List of groups that can manage IPLs
+Config.Debug = false
+Config.AdminCommand = "admin:ipl"
+Config.AdminGroups = {"group.admin", "group.god", "group.superadmin"}
 
 Config.GhostKeybind = {
-    name        = 'av_ipls_focus',
+    name = 'av_ipls_focus',
     description = 'Restore IPL admin panel focus',
-    defaultKey  = 'H',
+    defaultKey = 'H',
 }
 
 function dbug(...)

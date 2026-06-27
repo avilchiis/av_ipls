@@ -59,15 +59,9 @@ return {
                 angel = "set_ai_tablets_03",
             },
         },
-        Details = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                cat = "set_pet_cat",
-                bowl = "set_pet_dog",
-                poster = "set_michael_poster",
-            },
-        },
+        Cat = { _type = "toggle", options = { on = "set_pet_cat", off = "" } },
+        Bowl = { _type = "toggle", options = { on = "set_pet_dog", off = "" } },
+        Poster = { _type = "toggle", options = { on = "set_michael_poster", off = "" } },
     
         Style = {
             _type = "stages",

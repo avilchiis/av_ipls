@@ -45,16 +45,6 @@ return {
                 back = "int01_ba_screen",
             },
         },
-        Lights = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                style01 = "dj_01_lights_04",
-                style02 = "dj_02_lights_04",
-                style03 = "dj_03_lights_04",
-                style04 = "dj_04_lights_04",
-            },
-        },
         Droplets = {
             _type = "select",
             _nullable = false,
@@ -95,9 +85,45 @@ return {
                 style04 = "dj_04_lights_04",
             },
         },
+        Security = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on = "int01_ba_security_upgrade",
+                off = "",
+            },
+        },
+        Speakers = {
+            _type = "stages",
+            _nullable = false,
+            options = {
+                basic = "int01_ba_equipment_setup",
+                upgrade = { "int01_ba_equipment_setup", "int01_ba_equipment_upgrade" },
+            },
+        },
+        Podium = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on = "int01_ba_style02_podium",
+                off = "",
+            },
+        },
+        Bar = {
+            _type = "toggle",
+            _nullable = false,
+            options = {
+                on = "int01_ba_bar_content",
+                off = "",
+            },
+        },
     },
     defaults = {
         Turntables = "style01",
         Lasers = "style04",
+        Security = "on",
+        Speakers = "basic",
+        Podium = "on",
+        Bar = "on",
     },
 }

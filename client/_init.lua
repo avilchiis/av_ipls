@@ -1,4 +1,4 @@
--- Shared globals — must load first in client_scripts
+
 
 Registry = require 'interiors.registry'
 serverState = {}

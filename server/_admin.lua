@@ -6,8 +6,8 @@ lib.addCommand(Config.AdminCommand, {
     TriggerClientEvent('av_ipls:openAdminMenu', source)
 end)
 
-function isAdmin(playerId) -- Used for admin panel actions
-    local result = IsPlayerAceAllowed(playerId, ('command.%s'):format(Config.AdminCommand)) -- run the default admin check
+function isAdmin(playerId)
+    local result = IsPlayerAceAllowed(playerId, ('command.%s'):format(Config.AdminCommand))
     dbug("isAdmin(result)", result)
     return result
 end

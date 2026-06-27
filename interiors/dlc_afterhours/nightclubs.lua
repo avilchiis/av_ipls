@@ -1,5 +1,3 @@
--- After Hours / Nightclubs
-
 return {
     id = "nightclubs",
     label = "Nightclubs",
@@ -7,23 +5,10 @@ return {
     coords = { x = -1604.664, y = -3012.583, z = -78.000 },
     interior_id = 271617,
     ipls = {
-        load = {
-            "ba_int_placement_ba_interior_0_dlc_int_01_ba_milo_",
-        },
-        remove = {
-        },
+        load = { "ba_int_placement_ba_interior_0_dlc_int_01_ba_milo_" },
+        remove = {},
     },
     variants = {
-        Interior = {
-            _type = "select",
-            _nullable = false,
-            options = {
-                basic = "Int01_ba_equipment_setup",
-                number1 = "Int01_ba_trophy01",
-                battler = "Int01_ba_trophy02",
-                dancer = "Int01_ba_trophy03",
-            },
-        },
         Name = {
             _type = "select",
             _nullable = false,
@@ -116,18 +101,16 @@ return {
                 dancer = "Int01_ba_trophy03",
             },
         },
-        Posters = {
-            _type = "select",
+        TrophyColor = {
+            _type = "color",
             _nullable = false,
+            _target = "Trophy",
             options = {
-                forSale = "ba_caseX_forsale",
-                dixon = "ba_caseX_dixon",
-                madonna = "ba_caseX_madonna",
-                solomun = "ba_caseX_solomun",
-                taleOfUs = "ba_caseX_taleofus",
+                bronze = 0,
+                silver = 1,
+                gold = 2,
             },
         },
-    
         Speakers = {
             _type = "stages",
             _nullable = false,
@@ -136,22 +119,42 @@ return {
                 upgrade = { "Int01_ba_equipment_setup", "Int01_ba_equipment_upgrade" },
             },
         },
-        Security = {
-            _type = "toggle",
+        Security = { _type = "toggle", _nullable = false, options = { on = "Int01_ba_security_upgrade", off = "" } },
+        Bar = { _type = "toggle", _nullable = false, options = { on = "Int01_ba_bar_content", off = "" } },
+        Booze = {
+            _type = "stages",
             _nullable = false,
             options = {
-                on = "Int01_ba_security_upgrade",
-                off = "",
+                A = "Int01_ba_booze_01",
+                B = { "Int01_ba_booze_01", "Int01_ba_booze_02" },
+                C = { "Int01_ba_booze_01", "Int01_ba_booze_02", "Int01_ba_booze_03" },
             },
         },
-},
+        Clutter = { _type = "toggle", options = { on = "Int01_ba_Clutter", off = "" } },
+        WorkLamps = { _type = "toggle", options = { on = "Int01_ba_Worklamps", off = "" } },
+        Truck = { _type = "toggle", options = { on = "Int01_ba_deliverytruck", off = "" } },
+        DryIceMachines = { _type = "toggle", options = { on = "Int01_ba_dry_ice", off = "" } },
+        LightRigsOff = { _type = "toggle", options = { on = "light_rigs_off", off = "" } },
+        RoofLightsOff = { _type = "toggle", options = { on = "Int01_ba_lightgrid_01", off = "" } },
+        FloorTradLights = { _type = "toggle", options = { on = "Int01_ba_trad_lights", off = "" } },
+        Chest = { _type = "toggle", options = { on = "Int01_ba_trophy04", off = "" } },
+        VaultAmmunations = { _type = "toggle", options = { on = "Int01_ba_trophy05", off = "" } },
+        VaultMeth = { _type = "toggle", options = { on = "Int01_ba_trophy07", off = "" } },
+        VaultFakeID = { _type = "toggle", options = { on = "Int01_ba_trophy08", off = "" } },
+        VaultWeed = { _type = "toggle", options = { on = "Int01_ba_trophy09", off = "" } },
+        VaultCoke = { _type = "toggle", options = { on = "Int01_ba_trophy10", off = "" } },
+        VaultCash = { _type = "toggle", options = { on = "Int01_ba_trophy11", off = "" } },
+    },
     defaults = {
         Name = "galaxy",
         Style = "edgy",
         Podium = "edgy",
         Turntables = "style01",
         Bands = "cyan",
-    
-        Speakers = "basic",
-},
+        Speakers = "upgrade",
+        Trophy = "number1",
+        TrophyColor = "gold",
+        Bar = "on",
+        Booze = "C",
+    },
 }

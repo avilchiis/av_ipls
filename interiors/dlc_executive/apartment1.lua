@@ -6,6 +6,7 @@ return {
     category = "Executives & Other Criminals",
     coords = { x = -787.7805, y = 334.9232, z = 215.8384 },
     interior_id = {
+        modern = 227329,
         moody = 228097,
         vibrant = 228865,
         sharp = 229633,
@@ -15,20 +16,25 @@ return {
         aqua = 232705,
     },
     ipls = {
-        load = {
-            "apa_v_mp_h_01_a",
-            "apa_v_mp_h_02_a",
-            "apa_v_mp_h_03_a",
-            "apa_v_mp_h_04_a",
-            "apa_v_mp_h_05_a",
-            "apa_v_mp_h_06_a",
-            "apa_v_mp_h_07_a",
-            "apa_v_mp_h_08_a",
-        },
-        remove = {
-        },
+        load = {},   -- IPLs are managed by the Style (ipl_select) variant
+        remove = {},
     },
     variants = {
+        -- Each style loads its own IPL + uses its own interior_id
+        Style = {
+            _type = "ipl_select",
+            _nullable = false,
+            options = {
+                modern = "apa_v_mp_h_01_a",
+                moody = "apa_v_mp_h_02_a",
+                vibrant = "apa_v_mp_h_03_a",
+                sharp = "apa_v_mp_h_04_a",
+                monochrome = "apa_v_mp_h_05_a",
+                seductive = "apa_v_mp_h_06_a",
+                regal = "apa_v_mp_h_07_a",
+                aqua = "apa_v_mp_h_08_a",
+            },
+        },
         Smoke = {
             _type = "stages",
             _nullable = false,
@@ -38,7 +44,6 @@ return {
                 stage3 = "Apart_Hi_Smokes_C",
             },
         },
-    
         Strip = {
             _type = "select",
             _nullable = false,
@@ -57,9 +62,10 @@ return {
                 C = "Apart_Hi_Booze_C",
             },
         },
-},
+    },
     defaults = {
+        Style = "modern",
         Strip = "A",
         Booze = "A",
-},
+    },
 }

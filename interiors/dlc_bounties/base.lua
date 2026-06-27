@@ -1,9 +1,9 @@
--- The Chop Shop / Base
+-- Bottom Dollar Bounties / Base
 
 return {
     id = "bounties_base",
     label = "Base",
-    category = "The Chop Shop",
+    category = "Bottom Dollar Bounties",
     min_build = 3258,
     coords = nil,
     interior_id = nil,

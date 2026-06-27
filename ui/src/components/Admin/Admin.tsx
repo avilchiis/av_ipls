@@ -8,7 +8,7 @@ import {
   Transition,
   Tooltip,
 } from "@mantine/core";
-import { X, Ghost } from "lucide-react";
+import { X, Ghost, MapPin } from "lucide-react";
 import { isEnvBrowser, useNuiEvent } from "../../hooks/useNuiEvents";
 import {
   RegistryAtom,
@@ -17,7 +17,13 @@ import {
   SelectedInteriorAtom,
   GameBuildAtom,
 } from "../../reducers/atoms";
-import { mockAdminData, apiClose, apiGhostMode, apiSave } from "../../Api/Api";
+import {
+  mockAdminData,
+  apiClose,
+  apiGhostMode,
+  apiSave,
+  apiLocate,
+} from "../../Api/Api";
 import type { AdminData, InteriorState, ServerState } from "../../types/types";
 import { DetailPanel } from "./DetailPanel";
 import type { Draft } from "./DetailPanel";
@@ -46,10 +52,15 @@ export const Admin = () => {
     setRegistry(data.registry);
     setServerState(data.state);
     setGameBuild(data.gameBuild ?? 9999);
-    setSelectedCategory(null);
-    setSelectedInteriorId(null);
     setGhost(false);
     setVisible(true);
+    if (data.currentInteriorId && data.registry[data.currentInteriorId]) {
+      setSelectedCategory(data.registry[data.currentInteriorId].category);
+      setSelectedInteriorId(data.currentInteriorId);
+    } else {
+      setSelectedCategory(null);
+      setSelectedInteriorId(null);
+    }
   });
 
   useNuiEvent<{ id: string; state: InteriorState }>(
@@ -59,7 +70,6 @@ export const Admin = () => {
     },
   );
 
-  // Full state refresh — covers race condition where menu opened before syncState arrived
   useNuiEvent<ServerState>("syncState", (state) => {
     setServerState(state);
   });
@@ -114,6 +124,14 @@ export const Admin = () => {
     apiGhostMode();
   };
 
+  const handleLocate = async () => {
+    const result = await apiLocate();
+    if (result?.interiorId && registry[result.interiorId]) {
+      setSelectedCategory(registry[result.interiorId].category);
+      setSelectedInteriorId(result.interiorId);
+    }
+  };
+
   return (
     <Transition
       mounted={visible}
@@ -146,6 +164,18 @@ export const Admin = () => {
               </Flex>
               <Flex align="center" gap={6}>
                 <Tooltip
+                  label="Locate current interior"
+                  bg="var(--tooltip)"
+                  c="var(--text)"
+                  position="bottom"
+                  withArrow
+                  fz="xs"
+                >
+                  <Box className={classes.closeBtn} onClick={handleLocate}>
+                    <MapPin size={15} />
+                  </Box>
+                </Tooltip>
+                <Tooltip
                   label="Ghost mode [Press H to restore]"
                   bg="var(--tooltip)"
                   c="var(--text)"
@@ -166,11 +196,10 @@ export const Admin = () => {
                 </Box>
               </Flex>
             </Flex>
-
             <Flex style={{ height: "calc(100% - 44px)" }}>
               <Box className={classes.categoryPanel}>
                 <Text className={classes.columnLabel}>DLC</Text>
-                <ScrollArea style={{ flex: 1 }} scrollbarSize={4}>
+                <ScrollArea style={{ flex: 1 }} scrollbarSize={4} mb="xs">
                   {categories.map((cat) => {
                     const isActive = cat === selectedCategory;
                     return (
@@ -187,7 +216,6 @@ export const Admin = () => {
                   })}
                 </ScrollArea>
               </Box>
-
               <Box className={classes.interiorPanel}>
                 <Text className={classes.columnLabel}>Interiors</Text>
                 <ScrollArea style={{ flex: 1 }} scrollbarSize={4}>
@@ -226,7 +254,6 @@ export const Admin = () => {
                   )}
                 </ScrollArea>
               </Box>
-
               <DetailPanel
                 def={selectedDef}
                 serverState={selectedState}

@@ -7,13 +7,9 @@ https://docs.av-scripts.com/guides/ipl-loader
 # You can use code **IPL** for a **15% Discount** on my Tebex:
 
 https://av-scripts.tebex.io/
-https://av-scripts.tebex.io/
-https://av-scripts.tebex.io/
 
 ## Join Discord
 
-https://discord.com/invite/2qcG8acvXq
-https://discord.com/invite/2qcG8acvXq
 https://discord.com/invite/2qcG8acvXq
 
 ## Credits
